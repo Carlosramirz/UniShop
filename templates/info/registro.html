@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/info/registro.css' %}" />
+  </head>
+
+  <body>
+    <!-- partial:index.partial.html -->
+    <section>
+      <div class="wrapper">
+        <div class="title-text">
+          <div class="title login">Inicio Sesion</div>
+          <div class="title signup">Registro</div>
+        </div>
+        <div class="form-container">
+          <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked />
+            <input type="radio" name="slide" id="signup" />
+            <label for="login" class="slide login">Inicio Sesion</label>
+            <label for="signup" class="slide signup">Registro</label>
+            <div class="slider-tab"></div>
+          </div>
+          <div class="form-inner">
+            <!-- Formulario inicio de sesión -->
+            <form action="{% url 'login' %}" method="post" class="login">
+              {% csrf_token %}
+              <div class="field">
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Nombre de usuario"
+                  required
+                />
+              </div>
+              <div class="field">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Contraseña"
+                  required
+                />
+              </div>
+              <div class="pass-link"><a href="#">Olvidó su contraseña?</a></div>
+              {% if error_message %}
+              <div class="error-message">{{ error_message }}</div>
+              {% endif %}
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Iniciar Sesion" />
+              </div>
+              <div class="signup-link">
+                No eres miembro? <a href="#">Registrate</a>
+              </div>
+            </form>
+            <!-- Formulario de Registro -->
+            <form action="{% url 'registro' %}" method="post" class="signup">
+              {% csrf_token %} {{ form.non_field_errors }}
+              <div class="field">
+                {{ form.username.errors }}
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Nombre de usuario"
+                  required
+                />
+              </div>
+              <div class="field">
+                {{ form.first_name.errors }}
+                <input
+                  type="text"
+                  name="first_name"
+                  placeholder="Nombre"
+                  required
+                />
+              </div>
+              <!-- Agrega el resto de los campos y sus mensajes de error -->
+              <div class="field">
+                {{ form.last_name.errors }}
+                <input
+                  type="text"
+                  name="last_name"
+                  placeholder="Apellido"
+                  required
+                />
+              </div>
+              <div class="field">
+                {{ form.email.errors }}
+                <input type="text" name="email" placeholder="Correo" required />
+              </div>
+              <div class="field">
+                {{ form.password1.errors }}
+                <input
+                  type="password"
+                  name="password1"
+                  placeholder="Contraseña"
+                  required
+                />
+              </div>
+              <div class="field">
+                {{ form.password2.errors }}
+                <input
+                  type="password"
+                  name="password2"
+                  placeholder="Confirmar contraseña"
+                  required
+                />
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Registrar" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- partial -->
+    <script src="{% static 'js/info/registro.js' %}"></script>
+  </body>
+</html>

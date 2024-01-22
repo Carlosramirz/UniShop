@@ -1,0 +1,46 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="{% static 'css/info/contacto.css' %}">
+</head>
+
+<body>
+
+    <section class="form_wrap">
+        <section class="cantact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <img src="{% static 'img/info/logo blanco.png' %}" alt="">
+                <h2>INFORMACION<br>DE CONTACTO</h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope"></span> info.contact@gmail.com</p>
+                <p><span class="fa fa-mobile"></span> +1(585) 902-8665</p>
+            </section>
+        </section>
+
+        <form action="https://formsubmit.co/rastacoto@gmail.com" method="POST" class="form_contact">
+            <h2>Envia un mensaje</h2>
+            <label for="names">Nombres *</label>
+            <input type="text" id="names" name="name" required>
+            <label for="email">Correo electronico *</label>
+            <input type="email" id="email" name="email" required>
+            <label for="telefono">Telefono / Celular</label>
+            <input type="text" id="telefono" name="telefono" required>
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+        </form>
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="{% static 'js/info/contacto.js' %}"></script>
+
+</body>
+
+</html>

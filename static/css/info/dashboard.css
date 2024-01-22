@@ -1,0 +1,215 @@
+/* FONTS GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* VARIABLES */
+
+:root {
+    --blanco: #E0E0E0;
+    --azul-opacidad: #184463;
+    --bg-menu: #003053;
+    --bg-body: #C7E1FF;
+}
+
+/* GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--blanco);
+}
+
+/* LAYOUT */
+
+.menu-dashboard {
+    width: 150px; /* Establece el ancho que desees para tu menú lateral */
+    height: 100vh; /* Altura total de la ventana de visualización */
+    position: fixed; /* Fija el menú lateral para que no se mueva al hacer scroll */
+    top: 0;
+    left: 0;
+    background: var(--bg-menu);
+    transition: width .3s ease; /* Efecto de transición */
+    z-index: 1000; /* Asegúrate de que el menú esté sobre otros elementos */
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-menu .logo {
+    
+    display: flex;
+    padding-bottom: 50px;
+    align-items: center;
+}
+
+.top-menu .logo img {
+    width: 40px;
+    transition: width .3s ease;
+}
+
+.top-menu .logo span {
+    font-size: 20px;
+    margin-left: 20px;
+    display: none;
+}
+
+.top-menu .toggle {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.top-menu .toggle i {
+    font-size: 35px;
+}
+
+
+
+/* ENLACES MENU */
+
+.menu .enlace {
+    width: 100%;
+    padding: 20px 0 20px 17px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+
+.menu .enlace:hover {
+    background: var(--azul-opacidad);
+}
+
+.menu .enlace i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.menu .enlace span {
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.menu-dashboard.open {
+    max-width: 300px;
+}
+
+.menu-dashboard.open .top-menu .logo span {
+    display: block;
+}
+
+.menu-dashboard.open .input-search
+.menu-dashboard.open .menu .enlace {
+    width: auto;
+}
+
+.menu-dashboard.open .input-search .input {
+    display: block;
+}
+
+.menu-dashboard.open .menu .enlace {
+    padding: 20px;
+}
+
+.menu-dashboard.open .menu .enlace span {
+    opacity: 1;
+}
+
+/* Estilo básico para el layout del dashboard */
+.menu-dashboard {
+    width: 250px; /* o el ancho que desees para tu menú lateral */
+    position: fixed; /* Fija el menú lateral para que no se mueva al hacer scroll */
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+  
+.main-content {
+    margin-left: 250px; /* Debe ser el mismo ancho que el menú para evitar superposiciones */
+    padding: 20px; /* Añade algo de espacio interior */
+}
+  
+  /* Ajustes para que el contenedorInfo aparezca en el centro de main-content */
+#contenedorInfo {
+    color: var(--bg-menu);
+    clear: both;
+    max-width: 600px; /* o el ancho máximo que desees */
+    margin-top: 20px; /* Añade margen superior si es necesario */
+    margin-bottom: 20px; /* Añade margen inferior si es necesario */
+    margin-left: auto; /* Centra el div en el espacio disponible horizontalmente */
+    margin-right: auto; /* Centra el div en el espacio disponible horizontalmente */
+    padding: 20px; /* Añade espacio interior */
+    position: relative; /* Establece la posición relativa para el posicionamiento */
+    z-index: 1; /* Menor z-index para que el contenido aparezca debajo del menú */
+}
+
+#contenedorTabla {
+    color: var(--bg-menu);
+    clear: both;
+    max-width: 600px; /* o el ancho máximo que desees */
+    margin-top: 20px; /* Añade margen superior si es necesario */
+    margin-left: auto; /* Centra el div en el espacio disponible horizontalmente */
+    margin-right: auto; /* Centra el div en el espacio disponible horizontalmente */
+    padding: 20px; /* Añade espacio interior */
+}
+
+#contenedorTabla button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contenedorTabla button:hover {
+    background-color: #ccc; /* O cualquier otro color que prefieras */
+}
+
+#contenedorUsuarios{
+    color: var(--bg-menu);
+    clear: both;
+    max-width: 600px; /* o el ancho máximo que desees */
+    margin-top: 20px; /* Añade margen superior si es necesario */
+    margin-left: auto; /* Centra el div en el espacio disponible horizontalmente */
+    margin-right: auto; /* Centra el div en el espacio disponible horizontalmente */
+    padding: 20px; /* Añade espacio interior */
+}
+
+/* Estilo general de la tabla */
+.table-users {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* Ajusta según sea necesario */
+}
+
+/* Estilo de los encabezados de la tabla */
+.table-users th {
+    background-color: #4CAF50; /* Color de fondo para los encabezados */
+    color: white; /* Color del texto para los encabezados */
+    text-align: left; /* Alineación del texto */
+    padding: 8px; /* Relleno para los encabezados */
+}
+
+/* Estilo de las celdas de la tabla */
+.table-users td {
+    border: 1px solid #ddd; /* Borde para las celdas */
+    padding: 8px; /* Relleno para las celdas */
+}
+
+/* Estilo para las filas de la tabla al pasar el mouse */
+.table-users tr:hover {
+    background-color: #ddd; /* Color de fondo al pasar el mouse */
+}

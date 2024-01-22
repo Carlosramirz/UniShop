@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="{% static 'css/info/productos.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Lista de Productos</h1>
+    </header>
+    <main>
+        <div class="center-buttons">
+            <a href="{% url 'agregar_producto' %}"><button>Agregar Producto</button></a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                    <tr>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>
+                            <a href="{% url 'editar_producto' producto.id %}">Editar</a> |
+                            <a href="{% url 'eliminar_producto' producto.id %}">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    <a class="logout-link" href="{% url 'logout' %}">Cerrar sesión</a>
+</body>
+</html>

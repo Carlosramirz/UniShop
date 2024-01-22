@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/carrito/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/carrito/cart.css' %}" />
+  <script src="{% static 'js/info/carrito/bicicletas.js' %}" async></script>
+  <script src="{% static 'js/info/carrito/cartService.js' %}" async></script>
+  <script src="{% static 'js/info/carrito/cart.js' %}" async></script>
+	<title>Bicicletas puntoJson - Carrito</title>
+</head>
+<body>
+  <header>
+		<nav>
+			<a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt="Logo" id="logo"></a>
+			<div>
+				<a href="#">MTB</a>
+				<a href="#">Ruta</a>
+				<a href="{% url 'cart' %}" id="cart"><img src="{% static 'img/info/tienda/iconos/shopping-cart.png' %}" alt=""><span id="cuenta-carrito">0</span></a>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<p id="carrito-vacio">Ups! El carrito está vacío, <a href="./index.html">elige algunos productos</a></p>
+		<section id="cart-container">
+		</section>
+  <section id="totales">
+    <p>Total unidades: <span id="cantidad">0</span></p>
+    <p>Total precio: $<span id="precio">0</span></p>
+    <button disabled>Comprar</button>
+    <button id="reiniciar">Reiniciar</button>
+  </section>
+</main>
+
+</body>
+</html>

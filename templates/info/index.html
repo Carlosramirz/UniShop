@@ -1,0 +1,287 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Shop</title>
+    <link rel="stylesheet" href="{% static 'css/info/style.css' %}">
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <link src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+    <meta name="viewport" content="width =divice-width, initial-scale = 1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@100;400;900&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SECCION PRINCIPAL -->
+    <section id="banner">
+        <img src="{% static 'img/info/unishop.png' %}" class="logo" alt="">
+        <div class="banner-text">
+            <h1>UniShop</h1>
+            <br>
+            <p>Realza tu belleza, transforma tu estilo</p>
+            <div class="banner-btn">
+                <a href="{% url 'registro' %}"><span></span> Registrate</a>
+                <a href="{% url 'reserva' %}"><span></span>Agenda tu Hora</a>
+            </div>
+        </div>
+    </section>
+    <!-- FIN SECCION PRINCIPAL -->
+
+    <!--MENU LATERAL-->
+    <div id="sideNav">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#features">Sobre Nosotros</a></li>
+                <li><a href="#service">Nuestros Servicios</a></li>
+                <li><a href="#team">Nuestro Equipo</a></li>
+                <li><a href="#testimonial">Testimonios</a></li>
+                <li><a href="#footer">Contactanos</a></li>
+                <li><a href="{% url 'tienda' %}">Tienda Online</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="menuBtn">
+        <img src="{% static 'img/info/menu.png' %}" id="menu">
+    </div>
+    <!-- FIN MENU LATERAL-->
+
+    <!-- SECCION PRINCIPAL -->
+
+    <!-- FEATURES -->
+    <section id="features">
+        <div class="title-text">
+            <p>Nosotros</p>
+            <h1>Porque Elegirnos</h1>
+        </div>
+        <div class="feature-box">
+            <div class="features">
+                <h1>Staff Profesional con Experiencia</h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i ><ion-icon name="cut-outline" class="fa"></ion-icon></i>
+                    </div>
+                    <div class="features-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptas, totam ea unde </p>
+                    </div>
+                </div>
+                <h1>Agende su hora Online</h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i ><ion-icon name="calendar-number-outline" class="fa"></ion-icon></i>
+                    </div>
+                    <div class="features-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptas, totam ea unde </p>
+                    </div>
+                </div>
+                <h1>Zona de Espera</h1>
+                <div class="features-desc">
+                    <div class="features-icon">
+                        <i ><ion-icon name="game-controller-outline" class="fa"></ion-icon></i>
+                    </div>
+                    <div class="features-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptas, totam ea unde </p>
+                    </div>
+                </div>
+            </div>
+            <div class="features-img">
+                <img src="{% static '/img/info/about-img.jpg' %}">
+            </div>
+        </div>
+    </section>
+    <!-- FIN FEATURES -->
+
+    <!-- SERVICIOS -->
+
+    <section class="services section" id="services">
+        <div class="title-text">
+            <div class="row">
+                <div class="section__title">
+                    <h1>Servicios</h1>
+                    <span>Que realizamos</span>
+                </div>
+            </div>
+            <div class="services__content__descripion grid container">
+                <div class="box">
+                    <div class="inner">
+                        <img src="{% static 'img/info/servicos/corte.png' %}" alt="">
+                        <p>Corte de cabello</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="inner">
+                        <img src="{% static 'img/info/servicos/depilacao.png' %}" alt="">
+                        <p>Depilación</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="inner">
+                        <img src="{% static 'img/info/servicos/limpeza.png' %}" alt="">
+                        <p>Limpieza facial</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="inner">
+                        <img src="{% static 'img/info/servicos/manicure.png' %}" alt="">
+                        <p>Manicure</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="inner">
+                        <img src="{% static 'img/info/servicos/maquiagem.png' %}" alt="">
+                        <p>Maquillaje</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="inner">
+                        <img src="{% static 'img/info/servicos/pedicure.png' %}" alt="">
+                        <p>Pedicure</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="inner">
+                        <img src="{% static 'img/info/servicos/pentado.png' %}" alt="">
+                        <p>Lavado</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="inner">
+                        <img src="{% static 'img/info/servicos/sobrancelha.png' %}" alt="">
+                        <p>Diseños</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--TEAM-->
+    <section id="team">
+        <div class="title-text">
+            <p>Team</p>
+            <h1>Nuestro Equipo</h1>
+        </div>
+        <div class="team-carousel"></div>
+            <div class="team-box">
+                <div class="single-service">
+                    <img src="{% static '/img/info/Nico-Valdivia.jpg' %}" >
+                    <div class="overlay"></div>
+                    <div class="service-desc">
+                        <h3>Corte de Cabello</h3>
+                        <hr>
+                        <p>Nuestros profesionales estilizaran tu cabello con las mejores tecnicas de corte</p>
+                    </div>
+                </div>
+                <div class="single-service">
+                    <img src="{% static '/img/info/Sita-Zoroa.jpg' %}">
+                    <div class="overlay"></div>
+                    <div class="service-desc">
+                        <h3>Perfilado Barba</h3>
+                        <hr>
+                        <p>Nuestros profesionales estilizaran tu cabello con las mejores tecnicas de corte</p>
+                    </div>
+                </div>
+                <div class="single-service">
+                    <img src="{% static '/img/info/mina.jpg' %}">
+                    <div class="overlay"></div>
+                    <div class="service-desc">
+                        <h3>Peinados</h3>
+                        <hr>
+                        <p>Nuestros profesionales estilizaran tu cabello con las mejores tecnicas de corte</p>
+                    </div>
+                </div>
+                <div class="single-service">
+                    <img src="{% static '/img/info/don-josé.jpg' %}">
+                    <div class="overlay"></div>
+                    <div class="service-desc">
+                        <h3>Lavado de Cabello</h3>
+                        <hr>
+                        <p>Nuestros profesionales estilizaran tu cabello con las mejores tecnicas de corte</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <!--TESTIMONIOS-->
+
+    <!-- FIN TESTIMONIOS-->
+    <section id="testimonial">
+        <div class="title-text">
+            <p>TESTIMONIOS</p>
+            <h1>Que Dicen Nuestros Clientes</h1>
+        </div>
+        <div class="testimonial-row">
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="{% static '/img/info/img-1.jpg' %}">
+                    <div class="user-info">
+                        <h4>Keni Vel<ion-icon name="logo-twitter" class="fa"></ion-icon></h4>
+                        <small>@kanibel</small>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro optio repellat placeat eius accusantium atque, consequatur suscipit quam voluptatibus exercitationem aut nam consequuntur, possimus, impedit illo sequi non inventore incidunt!</p>
+            </div>
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="{% static '/img/info/img-2.jpg' %}">
+                    <div class="user-info">
+                        <h4>Lola Mento<ion-icon name="logo-twitter" class="fa"></ion-icon></h4>
+                        <small>@LolaMento</small>
+                    </div>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam culpa minima amet, quibusdam quia similique laboriosam voluptate dolorum optio molestias iure architecto, dignissimos quaerat fuga alias labore consequatur ullam maxime.</p>
+            </div>
+            <div class="testimonial-col">
+                <div class="user">
+                    <img src="{% static '/img/info/img-3.jpg' %}">
+                    <div class="user-info">
+                        <h4>Kein Becil<ion-icon name="logo-twitter" class="fa"></ion-icon></h4>
+                        <small>@keinBecil</small>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum, quibusdam eligendi! Quisquam quas repellendus doloremque quia ea totam impedit, autem expedita aspernatur debitis nesciunt unde, cupiditate suscipit a rem delectus?</p>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER-->
+    <section id="footer">
+        <img src="{% static '/img/info/unishop.png' %}" class="footer-img">
+        <div class="title-text">
+            
+            <!-- <h1>Visitanos</h1> -->
+        </div>
+        <div class="footer-row">
+            <div class="footer-left">
+                <h1>Horarios</h1>
+                <p>Lunes a Viernes  9:00 am - 21:00 pm </p>
+                <p>Sabado - Domingo 10:30 am - 14:00 pm</p>
+            </div>
+            <div class="footer-right">
+                <h1>Contactanos</h1>
+                <p>Avenida Ricardo Lyon #1234, Providencia<ion-icon name="navigate" class="fa"></ion-icon></p>
+                <p>unishop@salon.cl<ion-icon name="mail" class="fa"></ion-icon></p>
+                <p>+569 98765432<ion-icon name="call" class="fa"></ion-icon></p>
+                
+            </div>
+        </div>
+        <div class="social-links">
+            <ion-icon name="logo-instagram" class="insta"></ion-icon>
+            <ion-icon name="logo-facebook" class="fa"></ion-icon>
+            <ion-icon name="logo-tiktok" class="tik"></ion-icon>
+            <ion-icon name="logo-youtube" class="you"></ion-icon>
+            <p><p>Inetmatica 2023 Copyright © Todos los derechos reservados</p></p>
+        </div>
+    </section>
+    <!--modo oscuro-->
+    
+    <!--ESCONDER MENU LATERAL-->
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'js/info/index.js' %}"></script>
+</body>
+</html>
